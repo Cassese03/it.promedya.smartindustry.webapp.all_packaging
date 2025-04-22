@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label>Quantita' a pezzi</label>
+                            <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz" onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control keyboard_num ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
@@ -272,7 +272,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label>Quantita' a pezzi</label>
+                            <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz" onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control keyboard_num ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
@@ -540,7 +540,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label>Quantita' a pezzi</label>
+                            <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz" onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control keyboard_num ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
@@ -776,7 +776,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label>Quantita' a pezzi</label>
+                            <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz" onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control keyboard_num ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>

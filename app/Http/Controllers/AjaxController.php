@@ -2376,7 +2376,7 @@ class AjaxController extends Controller
 					)
 				)
             ) order by TimeIns DESC');
-            $p->conversione = DB::SELECT('SELECT * FROM ARARMisura where Cd_AR = \'' . $p->Cd_AR . '\' and Cd_ARMisura = \'pz\'');
+            $p->conversione = DB::SELECT('SELECT TOP 1 * FROM ARARMisura where Cd_AR = \'' . $p->Cd_AR . '\' and (Cd_ARMisura = \'pz\' or Cd_ARMisura = \'cn\')');
             /*' . $p->Id_PrOL . '*/
             $pallet = DB::select('SELECT * from AR Where Cd_AR LIKE \'05%\'');
 
