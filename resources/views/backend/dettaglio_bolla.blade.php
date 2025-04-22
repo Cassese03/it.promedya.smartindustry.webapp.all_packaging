@@ -620,6 +620,7 @@
                                                             <th>Ubicazione</th>
                                                             <th>Lotto Consigliato</th>
                                                             <th></th>
+                                                            <th></th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
@@ -628,7 +629,8 @@
 
                                                         <tr>
                                                             <td class="no-sort">
-                                                                    <?php echo $m->Cd_AR ?><br>
+                                                                    <?php echo $m->Cd_AR . ' - ' . $m->Descrizione; ?>
+                                                                <br>
                                                                 <small><?php echo $m->NotePrBLMateriale ?></small>
                                                             </td>
                                                             <td class="no-sort"><?php echo $m->Consumo ?><?php echo $m->Cd_ARMisura ?>
@@ -645,6 +647,12 @@
                                                                 <a style="float:left;margin-left:5px;"
                                                                    class="btn btn-danger btn-sm"
                                                                    onclick="elimina_materiale(<?php echo $m->Id_PrBLMateriale ?>,'<?php echo $m->Cd_AR ?>')">Elimina</a>
+                                                            </td>
+                                                            <td>
+                                                                <a style="float:left;margin-left:5px;"
+                                                                   class="btn btn-default btn-sm"
+                                                                   onclick="$('#modal_modifica_<?php echo $m->Id_PrBLMateriale ?>').modal('show');$('materiale_<?php echo $m->Id_PrBLMateriale; ?>').click();">Modifica</a>
+
                                                             </td>
 
                                                         </tr>
@@ -1061,6 +1069,98 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
+
+<?php foreach ($attivita_bolla->materiali as $m){ ?>
+<form method="post">
+
+    <div class="modal fade" id="modal_modifica_<?php echo $m->Id_PrBLMateriale;?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Modifica Materiale</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Lotto</label>
+                            <input class="form-control" type="text" name="Cd_ARLotto"
+                                   id="materiale_<?php echo $m->Id_PrBLMateriale; ?>"
+                                   value="<?php echo $m->Cd_ARLotto; ?>"
+                                   placeholder="Lotto Materiale"
+                                   onkeyup="controlla_lotto_mod($(this).val(),<?php echo $m->Id_PrBLMateriale; ?>)"
+                                   onclick="controlla_lotto_mod($(this).val(),<?php echo $m->Id_PrBLMateriale; ?>)"
+                                   required>
+                        </div>
+                        <div class="col-md-12">
+                            <label>Cd_AR</label>
+                            <select name="Cd_AR" class="form-control"
+                                    id="articoli_lotto_<?php echo $m->Id_PrBLMateriale?>">
+                                <option value="">Codice Articolo</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Quantità</label>
+                            <input class="form-control" type="number" step="0.00000001"
+                                   value="<?php echo $m->Consumo ?>"
+                                   id="quantita_inserisci_materiale_<?php echo $m->Id_PrBLMateriale?>" name="Quantita"
+                                   placeholder="Qta" required>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <label>UM</label>
+                            <select name="Cd_ARMisura" class="form-control"
+                                    id="articoli_um_<?php echo $m->Id_PrBLMateriale?>">
+                                <option value="">Inserisci Lotto</option>
+                            </select>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <label>Magazzino</label>
+                            <select name="Cd_MG" class="form-control"
+                                    id="magazzini_lotto_<?php echo $m->Id_PrBLMateriale?>">
+                                <option value="">Inserire Lotto</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label>Ubicazione</label>
+                            <input class="form-control" type="text" name="Cd_MGUbicazione"
+                                   id="Cd_MGUbicazione_<?php echo $m->Id_PrBLMateriale?>" value="">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label>Tipo</label>
+                            <input id="inserisci_tipo_materiale_<?php echo $m->Id_PrBLMateriale?>" class="form-control"
+                                   type="text" name="Tipo" value="2" readonly>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="modal-footer">
+                    <input type="hidden" name="Cd_Operatore" value="<?php echo $utente->Cd_Operatore ?>">
+                    <input type="hidden" name="Id_PrBLMateriale" id="Id_PrBLMateriale"
+                           value="<?php echo $m->Id_PrBLMateriale ?>">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                    <input style="float:left;" class="btn btn-primary" type="submit" name="modifica_materiale"
+                           value="Modifica Materiale">
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+</form>
+<?php } ?>
 
 
 <div class="modal fade" id="modal_cambia_misura_colli">
@@ -2315,6 +2415,13 @@
 
     function controlla_lotto(lotto) {
         $.get('<?php echo URL::asset('ajax/controlla_lotto') ?>/' + lotto, function (data) {
+            $('#ajax_loader').html(data);
+        });
+    }
+
+
+    function controlla_lotto_mod(lotto, Id_PrBLMateriale) {
+        $.get('<?php echo URL::asset('ajax/controlla_lotto_mod') ?>/' + lotto + "/" + Id_PrBLMateriale, function (data) {
             $('#ajax_loader').html(data);
         });
     }

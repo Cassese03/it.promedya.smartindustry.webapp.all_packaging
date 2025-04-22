@@ -6,7 +6,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Azioni
-                        Pedana <?php echo str_replace(' ', '', $p->Nr_Pedana) . ' (' . $p->Descrizione_Articolo . ')' ?></h4>
+                        Pedana <?php echo str_replace(' ','',$p->Nr_Pedana) . ' (' . $p->Descrizione_Articolo . ')' ?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">×</span></button>
                 </div>
@@ -119,11 +119,10 @@
                                                 <div class="itemcontent">
                                                     <input type="checkbox" name="colli_associati[]" autocomplete="off"
                                                            value="<?php echo $c->Id_xWPCollo ?>"
-                                                           <?php echo (str_replace(' ', '', $c->Nr_Pedana) == str_replace(' ', '', $p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
+                                                           <?php echo (str_replace(' ','',$c->Nr_Pedana) == str_replace(' ','',$p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
                                                     <h5><?php echo $c->Nr_Collo ?><br>
                                                         <small><?php echo number_format($c->QtaProdotta, 2, '.', '') ?><?php echo $c->Cd_ARMisura ?>
-                                                            <br><?php echo str_replace(' ', '', $c->Nr_Pedana) ?>
-                                                        </small>
+                                                            <br><?php echo str_replace(' ','',$c->Nr_Pedana) ?></small>
                                                     </h5>
                                                 </div>
                                             </label>
@@ -140,11 +139,10 @@
                                                 <div class="itemcontent">
                                                     <input type="checkbox" name="colli_associati[]" autocomplete="off"
                                                            value="<?php echo $c->Id_xWPCollo ?>"
-                                                           <?php echo (str_replace(' ', '', $c->Nr_Pedana) == str_replace(' ', '', $p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
+                                                           <?php echo (str_replace(' ','',$c->Nr_Pedana) == str_replace(' ','',$p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
                                                     <h5><?php echo $c->Nr_Collo ?><br>
                                                         <small><?php echo number_format($c->QtaProdotta, 2, '.', '') ?><?php echo $c->Cd_ARMisura ?>
-                                                            <br><?php echo str_replace(' ', '', $c->Nr_Pedana) ?>
-                                                        </small>
+                                                            <br><?php echo str_replace(' ','',$c->Nr_Pedana) ?></small>
                                                     </h5>
                                                 </div>
                                             </label>
@@ -208,8 +206,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Inizio Rilevazione
-                        Pedana <?php echo str_replace(' ', '', $p->Nr_Pedana) ?></h4>
+                    <h4 class="modal-title">Inizio Rilevazione Pedana <?php echo str_replace(' ','',$p->Nr_Pedana) ?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">×</span></button>
                 </div>
@@ -217,8 +214,7 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <label>Vuoi Iniziare la Rilevazione di della
-                                Pedana <?php echo str_replace(' ', '', $p->Nr_Pedana) ?> ?</label>
+                            <label>Vuoi Iniziare la Rilevazione di della Pedana <?php echo str_replace(' ','',$p->Nr_Pedana) ?> ?</label>
                         </div>
                     </div>
 
@@ -361,11 +357,10 @@
                                                 <div class="itemcontent">
                                                     <input type="checkbox" name="colli_associati[]" autocomplete="off"
                                                            value="<?php echo $c->Id_xWPCollo ?>"
-                                                           <?php echo (str_replace(' ', '', $c->Nr_Pedana) == str_replace(' ', '', $p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
+                                                           <?php echo (str_replace(' ','',$c->Nr_Pedana) == str_replace(' ','',$p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
                                                     <h5><?php echo $c->Nr_Collo ?><br>
                                                         <small><?php echo number_format($c->QtaProdotta, 2, '.', '') ?><?php echo $c->Cd_ARMisura ?>
-                                                            <br><?php echo str_replace(' ', '', $c->Nr_Pedana) ?>
-                                                        </small>
+                                                            <br><?php echo str_replace(' ','',$c->Nr_Pedana) ?></small>
                                                     </h5>
                                                 </div>
                                             </label>
@@ -383,11 +378,10 @@
                                                 <div class="itemcontent">
                                                     <input type="checkbox" name="colli_associati[]" autocomplete="off"
                                                            value="<?php echo $c->Id_xWPCollo ?>"
-                                                           <?php echo (str_replace(' ', '', $c->Nr_Pedana) == str_replace(' ', '', $p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
+                                                           <?php echo (str_replace(' ','',$c->Nr_Pedana) == str_replace(' ','',$p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
                                                     <h5><?php echo $c->Nr_Collo ?><br>
                                                         <small><?php echo number_format($c->QtaProdotta, 2, '.', '') ?><?php echo $c->Cd_ARMisura ?>
-                                                            <br><?php echo str_replace(' ', '', $c->Nr_Pedana) ?>
-                                                        </small>
+                                                            <br><?php echo str_replace(' ','',$c->Nr_Pedana) ?></small>
                                                     </h5>
                                                 </div>
                                             </label>
@@ -629,11 +623,10 @@
                                                 <div class="itemcontent">
                                                     <input type="checkbox" name="colli_associati[]" autocomplete="off"
                                                            value="<?php echo $c->Id_xWPCollo ?>"
-                                                           <?php echo (str_replace(' ', '', $c->Nr_Pedana) == str_replace(' ', '', $p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
+                                                           <?php echo (str_replace(' ','',$c->Nr_Pedana) == str_replace(' ','',$p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
                                                     <h5><?php echo $c->Nr_Collo ?><br>
                                                         <small><?php echo number_format($c->QtaProdotta, 2, '.', '') ?><?php echo $c->Cd_ARMisura ?>
-                                                            <br><?php echo str_replace(' ', '', $c->Nr_Pedana) ?>
-                                                        </small>
+                                                            <br><?php echo str_replace(' ','',$c->Nr_Pedana) ?></small>
                                                     </h5>
                                                 </div>
                                             </label>
@@ -650,11 +643,10 @@
                                                 <div class="itemcontent">
                                                     <input type="checkbox" name="colli_associati[]" autocomplete="off"
                                                            value="<?php echo $c->Id_xWPCollo ?>"
-                                                           <?php echo (str_replace(' ', '', $c->Nr_Pedana) == str_replace(' ', '', $p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
+                                                           <?php echo (str_replace(' ','',$c->Nr_Pedana) == str_replace(' ','',$p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
                                                     <h5><?php echo $c->Nr_Collo ?><br>
                                                         <small><?php echo number_format($c->QtaProdotta, 2, '.', '') ?><?php echo $c->Cd_ARMisura ?>
-                                                            <br><?php echo str_replace(' ', '', $c->Nr_Pedana) ?>
-                                                        </small>
+                                                            <br><?php echo str_replace(' ','',$c->Nr_Pedana) ?></small>
                                                     </h5>
                                                 </div>
                                             </label>
@@ -718,8 +710,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Inizio Rilevazione
-                        Pedana <?php echo str_replace(' ', '', $p->Nr_Pedana) ?></h4>
+                    <h4 class="modal-title">Inizio Rilevazione Pedana <?php echo str_replace(' ','',$p->Nr_Pedana) ?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">×</span></button>
                 </div>
@@ -727,8 +718,7 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <label>Vuoi Iniziare la Rilevazione di della
-                                Pedana <?php echo str_replace(' ', '', $p->Nr_Pedana) ?> ?</label>
+                            <label>Vuoi Iniziare la Rilevazione di della Pedana <?php echo str_replace(' ','',$p->Nr_Pedana) ?> ?</label>
                         </div>
                     </div>
 
@@ -844,11 +834,10 @@
                                    class="form-control" readonly>
                         </div>
 
-
                         <div class="col-md-12">
                             <label>Pedana Epal ?</label>
                             <select id="pedana_<?php echo $p->Id_xWPPD ?>" name="Cd_xPD" class="form-control select2"
-                                    style="height:50px;" required>
+                                    required style="height:50px;" required>
                                 <option value="">Nessuna Pedana Selezionata</option>
                                 <option value="05.00001" <?php echo ($p->Cd_xPD == '05.00001') ? 'selected' : '' ?>>SI
                                 </option>
@@ -872,11 +861,10 @@
                                                 <div class="itemcontent">
                                                     <input type="checkbox" name="colli_associati[]" autocomplete="off"
                                                            value="<?php echo $c->Id_xWPCollo ?>"
-                                                           <?php echo (str_replace(' ', '', $c->Nr_Pedana) == str_replace(' ', '', $p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
+                                                           <?php echo (str_replace(' ','',$c->Nr_Pedana) == str_replace(' ','',$p->Nr_Pedana)) ? 'checked="checked"' : '' ?> style="position: absolute;clip: rect(0,0,0,0);pointer-events: none;">
                                                     <h5><?php echo $c->Nr_Collo ?><br>
                                                         <small><?php echo number_format($c->QtaProdotta, 2, '.', '') ?><?php echo $c->Cd_ARMisura ?>
-                                                            <br><?php echo str_replace(' ', '', $c->Nr_Pedana) ?>
-                                                        </small>
+                                                            <br><?php echo str_replace(' ','',$c->Nr_Pedana) ?></small>
                                                     </h5>
                                                 </div>
                                             </label>

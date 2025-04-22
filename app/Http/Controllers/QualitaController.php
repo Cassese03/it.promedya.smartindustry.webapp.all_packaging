@@ -51,22 +51,23 @@ class QualitaController extends Controller
         return Redirect::to('qualita');
     }
 
+
     function viewMateria()
     {
         if (!session()->has('utente')) {
             return Redirect::to('login');
         }
         $utente = session('utente');
-        $ol = DB::SELECT('SELECT * FROM PROL WHERE Id_PrOL in (SELECT Id_PrOL from PrBLAttivitaEx Where Arrestata = 0 and Prodotta = 0 and PercProdotta < 100) ORDER BY TIMEINS DESC ');
-        return view('qualita.qualitamateria', compact('utente', 'ol'));
+        return view('qualita.qualitamateria', compact('utente'));
     }
 
     function onFormMateria(Request $request)
     {
         $body = $request->all();
         $body['campo106'] = $body['uniqueInput'];
-        $body['campo104'] = 'QUALITA';
+        $body['campo104'] = 'QUALITA_MATERIA';
         if (isset($body['uniqueInput'])) unset($body['uniqueInput']);
+        if (isset($body['salva'])) unset($body['salva']);
         $check_old = DB::SELECT('SELECT * FROM xFormQualita WHERE campo106 = \'' . $body['campo106'] . '\' ');
         if (sizeof($check_old) > 0)
             DB::TABLE('xFormQualita')->where('campo106', '=', $body['campo106'])->update($body);

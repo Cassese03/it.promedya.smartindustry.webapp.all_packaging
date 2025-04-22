@@ -62,7 +62,7 @@ class AjaxController extends Controller
             for ($i = 1; $i <= 80; $i++) {
                 if (sizeof($rl_est) > 0 && $i == 73) {
                     foreach ($rl_est as $est) {
-                        echo "$('#campo73').append('<option value=\"" . $est->Cd_Operatore . "\">" . $est->Cd_Operatore.' '.$est->DataOra . "</option>');";
+                        echo "$('#campo73').append('<option value=\"" . $est->Cd_Operatore . "\">" . $est->Cd_Operatore . ' ' . $est->DataOra . "</option>');";
                     }
                 } else if (sizeof($rl_est) > 0 && $i == 74) {
                     foreach ($rl_est as $est) {
@@ -70,7 +70,7 @@ class AjaxController extends Controller
                     }
                 } else if (sizeof($rl_sta) > 0 && $i == 75) {
                     foreach ($rl_sta as $sta) {
-                        echo "$('#campo75').append('<option value=\"" . $sta->Cd_Operatore . "\">" . $sta->Cd_Operatore.' '.$sta->DataOra . "</option>');";
+                        echo "$('#campo75').append('<option value=\"" . $sta->Cd_Operatore . "\">" . $sta->Cd_Operatore . ' ' . $sta->DataOra . "</option>');";
                     }
                 } else if (sizeof($rl_sta) > 0 && $i == 76) {
                     foreach ($rl_sta as $sta) {
@@ -78,7 +78,7 @@ class AjaxController extends Controller
                     }
                 } else if (sizeof($rl_sal) > 0 && $i == 77) {
                     foreach ($rl_sal as $sal) {
-                        echo "$('#campo77').append('<option value=\"" . $sal->Cd_Operatore . "\">" . $sal->Cd_Operatore.' '.$sal->DataOra  . "</option>');";
+                        echo "$('#campo77').append('<option value=\"" . $sal->Cd_Operatore . "\">" . $sal->Cd_Operatore . ' ' . $sal->DataOra . "</option>');";
                     }
                 } else if (sizeof($rl_sal) > 0 && $i == 78) {
                     foreach ($rl_sal as $sal) {
@@ -86,7 +86,7 @@ class AjaxController extends Controller
                     }
                 } else if (sizeof($rl_tgl) > 0 && $i == 79) {
                     foreach ($rl_tgl as $tgl) {
-                        echo "$('#campo79').append('<option value=\"" . substr($tgl->Cd_Operatore, 0, 10) . "\">" . substr($tgl->Cd_Operatore, 0, 10).' '.$tgl->DataOra  . "</option>');";
+                        echo "$('#campo79').append('<option value=\"" . substr($tgl->Cd_Operatore, 0, 10) . "\">" . substr($tgl->Cd_Operatore, 0, 10) . ' ' . $tgl->DataOra . "</option>');";
                     }
                 } else if (sizeof($rl_tgl) > 0 && $i == 80) {
                     foreach ($rl_tgl as $tgl) {
@@ -207,7 +207,7 @@ class AjaxController extends Controller
             for ($i = 1; $i <= 80; $i++) {
                 if (sizeof($rl_est) > 0 && $i == 73) {
                     foreach ($rl_est as $est) {
-                        echo "$('#campo73').append('<option value=\"" . $est->Cd_Operatore . "\">" . $est->Cd_Operatore .' '.$est->DataOra . "</option>');";
+                        echo "$('#campo73').append('<option value=\"" . $est->Cd_Operatore . "\">" . $est->Cd_Operatore . ' ' . $est->DataOra . "</option>');";
                     }
                 } elseif (sizeof($rl_est) > 0 && $i == 74) {
                     foreach ($rl_est as $est) {
@@ -215,7 +215,7 @@ class AjaxController extends Controller
                     }
                 } elseif (sizeof($rl_sta) > 0 && $i == 75) {
                     foreach ($rl_sta as $sta) {
-                        echo "$('#campo75').append('<option value=\"" . $sta->Cd_Operatore . "\">" . $sta->Cd_Operatore.' '.$sta->DataOra  . "</option>');";
+                        echo "$('#campo75').append('<option value=\"" . $sta->Cd_Operatore . "\">" . $sta->Cd_Operatore . ' ' . $sta->DataOra . "</option>');";
                     }
                 } elseif (sizeof($rl_sta) > 0 && $i == 76) {
                     foreach ($rl_sta as $sta) {
@@ -223,7 +223,7 @@ class AjaxController extends Controller
                     }
                 } elseif (sizeof($rl_sal) > 0 && $i == 77) {
                     foreach ($rl_sal as $sal) {
-                        echo "$('#campo77').append('<option value=\"" . $sal->Cd_Operatore . "\">" . $sal->Cd_Operatore .' '.$sal->DataOra . "</option>');";
+                        echo "$('#campo77').append('<option value=\"" . $sal->Cd_Operatore . "\">" . $sal->Cd_Operatore . ' ' . $sal->DataOra . "</option>');";
                     }
                 } elseif (sizeof($rl_sal) > 0 && $i == 78) {
                     foreach ($rl_sal as $sal) {
@@ -231,7 +231,7 @@ class AjaxController extends Controller
                     }
                 } else if (sizeof($rl_tgl) > 0 && $i == 79) {
                     foreach ($rl_tgl as $tgl) {
-                        echo "$('#campo79').append('<option value=\"" . substr($tgl->Cd_Operatore, 0, 10) . "\">" . substr($tgl->Cd_Operatore, 0, 10).' '.$tgl->DataOra  . "</option>');";
+                        echo "$('#campo79').append('<option value=\"" . substr($tgl->Cd_Operatore, 0, 10) . "\">" . substr($tgl->Cd_Operatore, 0, 10) . ' ' . $tgl->DataOra . "</option>');";
                     }
                 } else if (sizeof($rl_tgl) > 0 && $i == 80) {
                     foreach ($rl_tgl as $tgl) {
@@ -388,6 +388,75 @@ class AjaxController extends Controller
             $versamento = $versamenti[0];
             return View::make('backend.ajax.dettagli_versamento', compact('versamento'));
         }
+    }
+
+    public function controlla_lotto_mod($lotto, $Id_PrBLMateriale)
+    {
+        ?>
+        <script type="text/javascript">
+            $('#articoli_lotto_<?php echo $Id_PrBLMateriale; ?>').html('');
+            $('#magazzini_lotto_<?php echo $Id_PrBLMateriale; ?>').html('');
+            $('#articoli_um_<?php echo $Id_PrBLMateriale; ?>').html('');
+        </script>
+        <?php
+        $articoli = DB::select('SELECT AR.Cd_AR,AR.Descrizione from AR JOIN ARLotto ON AR.Cd_AR = ARLotto.Cd_AR and ARLotto.Cd_ARLotto = \'' . $lotto . '\'');
+        if (sizeof($articoli) == 0) { ?>
+            <script type="text/javascript">
+                $('#articoli_lotto_<?php echo $Id_PrBLMateriale; ?>').append('<option value="">Inserire Lotto</option>');
+                $('#magazzini_lotto_<?php echo $Id_PrBLMateriale; ?>').append('<option value="">Magazzini Lotto</option>');
+                $('#articoli_um_<?php echo $Id_PrBLMateriale; ?>').append('<option value="">Inserire Lotto</option>');
+            </script>
+        <?php } else {
+
+            $ararmisura = DB::select('SELECT * from ARARMisura Where Cd_AR  = \'' . $articoli[0]->Cd_AR . '\''); ?>
+            <script type="text/javascript">
+                <?php foreach ($ararmisura as $misura) { ?>
+                $('#articoli_um_<?php echo $Id_PrBLMateriale; ?>').append('<option value="<?php echo $misura->Cd_ARMisura ?>" <?php echo ($misura->DefaultMisura == 1) ? 'selected' : '' ?>><?php echo $misura->Cd_ARMisura ?></option>');
+                <?php } ?>
+            </script>
+
+            <?php foreach ($articoli as $a) { ?>
+                <script type="text/javascript">
+                    $('#articoli_lotto_<?php echo $Id_PrBLMateriale; ?>').append('<option value="<?php echo $a->Cd_AR ?>"><?php echo $a->Cd_AR ?> - <?php echo $a->Descrizione ?></option>');
+                    $('#inserisci_tipo_materiale_<?php echo $Id_PrBLMateriale; ?>').val(2)
+                </script>
+            <?php }
+
+            $magazzini = DB::select('SELECT distinct Cd_MG from MGMov Where Cd_ARLotto = \'' . $lotto . '\'');
+            if (sizeof($magazzini) == 0) { ?>
+                <script type="text/javascript">
+                    $('#magazzini_lotto_<?php echo $Id_PrBLMateriale; ?>').append('<option value="00009" selected>00009</option>');
+                </script>
+            <?php }
+            foreach ($magazzini as $m) { ?>
+                <script type="text/javascript">
+                    $('#magazzini_lotto_<?php echo $Id_PrBLMateriale; ?>').append('<option value="<?php echo $m->Cd_MG ?>" <?php echo ($m->Cd_MG == '00009') ? 'selected' : '' ?>><?php echo $m->Cd_MG ?></option>');
+                </script>
+            <?php }
+
+        }
+
+
+        /*
+
+         $colli = DB::select('SELECT * from xWPCollo Where Nr_Collo = \'' . $lotto . '\'');
+          if (sizeof($colli) > 0) { ?>
+              <script type="text/javascript">
+
+                  $('#articoli_lotto_<?php echo $Id_PrBLMateriale; ?>').html('');
+                  $('#magazzini_lotto_<?php echo $Id_PrBLMateriale; ?>').html('');
+                  $('#articoli_um_<?php echo $Id_PrBLMateriale; ?>').html('');
+
+                  $('#articoli_lotto_<?php echo $Id_PrBLMateriale; ?>').append('<option value="">SemiLavorato</option>');
+                  $('#magazzini_lotto_<?php echo $Id_PrBLMateriale; ?>').append('<option value="">SemiLavorato</option>');
+                  $('#articoli_um_<?php echo $Id_PrBLMateriale; ?>').append('<option value="<?php echo $colli[0]->Cd_ARMisura ?>"><?php echo $colli[0]->Cd_ARMisura ?></option>');
+
+
+                  $('#quantita_inserisci_materiale_<?php echo $Id_PrBLMateriale; ?>').val(<?php echo $colli[0]->QtaProdotta ?>)
+                  $('#inserisci_tipo_materiale_<?php echo $Id_PrBLMateriale; ?>').val(3)
+              </script>
+          <?php }
+        */
     }
 
     public function controlla_lotto($lotto)
@@ -708,7 +777,16 @@ class AjaxController extends Controller
 
         $id_prol1 = $id_prol;
         $id_prol = DB::SELECT('SELECT
-        IIF(PROLAttivita.Cd_PrAttivita != \'IMBALLAGGIO\',(SELECT TOP 1 xWPCollo.Cd_PrRisorsa from xWPCollo where Id_PrBLAttivita = PrBLAttivita.Id_PrBLAttivita) ,\'IMB01\')as Risorsa,PRBLAttivita.Id_PrBLAttivita,PRRLAttivita.DataOra,PRRLAttivita.Cd_Operatore,PRRLAttivita.xCd_Operatore2 as Assistente,PROLAttivita .*,PRBLAttivita.* FROM PROLAttivita
+        IIF(PROLAttivita.Cd_PrAttivita != \'IMBALLAGGIO\',(SELECT TOP 1 xWPCollo.Cd_PrRisorsa from xWPCollo where Id_PrBLAttivita = PrBLAttivita.Id_PrBLAttivita) ,\'IMB01\')as Risorsa,
+        iif(PrRisorsa.Esterno = 1,CF.Descrizione,\'\') as FornitoreEsterno,
+        PRBLAttivita.Id_PrBLAttivita,
+        PRRLAttivita.DataOra,
+        PRRLAttivita.Cd_Operatore,
+        PRRLAttivita.xCd_Operatore2 as Assistente,PROLAttivita .*,
+        PRBLAttivita.*
+        FROM PROLAttivita
+        LEFT JOIN PrRisorsa ON PrRisorsa.Cd_PrRisorsa = PROLAttivita.Cd_PrRisorsa
+        LEFT JOIN CF ON PrRisorsa.Cd_CF = CF.Cd_CF
         LEFT JOIN PRBLAttivita ON PRBLAttivita.Id_PrOLAttivita = PROLAttivita.Id_PrOLAttivita
         LEFT JOIN xwpGruppiLavoro ON xwpGruppiLavoro.Id_PrblAttivita = PrblAttivita.Id_PrblAttivita
         LEFT JOIN PRRLAttivita ON PRRLAttivita.Id_PrBLAttivita = PRBLAttivita.Id_PrBLAttivita and PRRLAttivita.InizioFine = \'I\' and DataOra = (SELECT  MIN(DataOra)  FROM PRRLAttivita WHERE PRRLAttivita.Id_PrBLAttivita = PRBLAttivita.Id_PrBLAttivita and PRRLAttivita.InizioFine = \'I\')
@@ -777,7 +855,9 @@ class AjaxController extends Controller
                         <?php echo $i->Id_PrOLAttivita ?>
                     </td>
                     <td>
-                        <?php echo $i->Cd_Operatore;
+                        <?php
+                        if($i->FornitoreEsterno != '') echo $i->FornitoreEsterno;
+                        echo $i->Cd_Operatore;
                         if ($i->Assistente != '') echo ' / ' . $i->Assistente;
                         if (sizeof($note_prvr) > 0 && str_contains($i->Cd_PrRisorsa, 'ST')) echo ' / ' . $note_prvr[0]->Cd_Operatore; ?>
                     </td>
@@ -2274,7 +2354,7 @@ class AjaxController extends Controller
 
 
         $pedane = DB::select('
-            SELECT p.*,c.Descrizione as cliente,a.Cd_AR,PROL.Id_PrOL,a.Descrizione as Descrizione_Articolo,PRBLAttivita.NotePrBLAttivita,a.xPesobobina,a.xBase,a.PesoNetto as peso_pedana,a.Cd_AR,PRBLAttivita.Id_PrBLAttivita,PRRLAttivita.Id_PrRLAttivita  from xWPPD  p
+            SELECT p.*,c.Descrizione as cliente,a.Cd_AR,PROL.Id_PrOL,a.Descrizione as Descrizione_Articolo,PRBLAttivita.NotePrBLAttivita,a.xPesobobina,a.xBase,a.PesoNetto as peso_pedana,PRBLAttivita.Id_PrBLAttivita,PRRLAttivita.Id_PrRLAttivita  from xWPPD  p
             LEFT JOIN PROL ON PROL.Id_PrOL = p.Id_PrOL
             LEFT JOIN AR a ON a.Cd_AR = PROL.Cd_AR
             LEFT JOIN PROLDorig ON PROLDorig.Id_PrOL = PROL.Id_PrOL
@@ -2343,6 +2423,76 @@ class AjaxController extends Controller
         $fasi = DB::select('SELECT Cd_PrAttivita from PRAttivita');
 
         return View::make('backend.ajax.get_etichetta', compact('etichette', 'clienti', 'articoli', 'fasi'));
+
+    }
+
+    public function find_info_em($dcf)
+    {
+        try {
+
+            $idDotes = DB::SELECT('SELECT top 1 Id_DOTes FROM DORig WHERE Cd_Do = \'DCF\' AND Cd_ARLotto = \'' . $dcf . '\' ORDER BY TimeIns Desc');
+            if (sizeof($idDotes) > 0) {
+                $idDotes = $idDotes[0]->Id_DOTes;
+            } else {
+                $idDotes = "Nessun Documento";
+            }
+
+            $descrizione = DB::SELECT('SELECT Descrizione FROM DORig WHERE Cd_Do = \'DCF\' AND Cd_ARLotto = \'' . $dcf . '\' ORDER BY TimeIns Desc');
+            if (sizeof($descrizione) > 0) {
+                $descrizione = $descrizione[0]->Descrizione;
+                echo "$('#campo27').val('" . str_replace('\'', '', $descrizione) . "');";
+            }
+
+            $check = DB::SELECT('SELECT * FROM xFormQualita WHERE campo106 = \'' . $dcf . '\'');
+            if (sizeof($check) > 0) {
+                $check = $check[0];
+                for ($i = 1; $i <= 28; $i++) {
+                    echo "$('#campo$i').val('" . str_replace('\'', '', $check->{'campo' . $i}) . "');";
+                }
+            } else {
+
+                $fornitore = DB::select('SELECT CF.Descrizione FROM DOTes INNER JOIN CF on DOTes.Cd_CF = CF.Cd_CF WHERE Cd_Do = \'DCF\' AND Id_DoTes = ' . $idDotes);
+
+
+                if (sizeof($fornitore) > 0) $fornitore = $fornitore[0]->Descrizione;
+                else $fornitore = 'Nessun Fornitore';
+
+                echo "$('#campo26').val('" . str_replace('\'', '', $fornitore) . "');";
+
+                $docDCF = DB::select('SELECT * FROM DOTes where Cd_Do = \'DCF\' and Id_DoTes = ' . $idDotes);
+                if (sizeof($docDCF) > 0) $datadoc = $docDCF[0]->DataDoc;
+                if (isset($datadoc) && $datadoc != '') echo "$('#campo18').val('" . str_replace('\'', '', $datadoc) . "');";
+
+
+                $idRighe = DB::select('SELECT Id_DORig, Id_DORig_Evade from DORig where Id_DOTes = ' . $idDotes);
+                $id_dorig_evade = '';
+                foreach ($idRighe as $r) {
+                    if ($r->Id_DORig_Evade != null)
+                        $id_dorig_evade .= $r->Id_DORig_Evade . ',';
+                }
+                $id_dorig_evade = substr($id_dorig_evade, 0, -1);
+
+                $oaf = DB::select('SELECT DISTINCT DOTes.NumeroDoc FROM DOTes left join DORig on DORig.Id_DoTes = DOTes.Id_DoTes WHERE DORig.Id_DORig IN (' . $id_dorig_evade . ')');
+                $numeroDocOAF = '';
+                if (sizeof($oaf) > 0) {
+                    if (sizeof($oaf) > 1) {
+                        foreach ($oaf as $o) {
+                            if ($o->NumeroDoc != null)
+                                $numeroDocOAF .= $o->NumeroDoc . ' - ';
+                        }
+                        $numeroDocOAF = substr($numeroDocOAF, 0, -3);
+                    } else {
+                        $numeroDocOAF = $oaf[0]->NumeroDoc;
+                    }
+                }
+
+                echo "$('#campo23').val('" . str_replace('\'', '', $docDCF[0]->NumeroDocI) . "');";
+                echo "$('#campo21').val('" . str_replace('\'', '', $numeroDocOAF) . "');";
+
+            }
+        } catch (\Exception $e) {
+            return response('Errore nella ricerca del DCF => ' . $e->getMessage() . ' - ' . $e->getLine(), 400);
+        }
 
     }
 }

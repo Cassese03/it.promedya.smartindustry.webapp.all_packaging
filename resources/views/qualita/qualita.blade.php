@@ -521,6 +521,23 @@
         $('#campo77').html('');
         $('#campo79').html('');
     }
+
+    function prepopolaInputDaURL() {
+        function getParameterByName(name) {
+            const url = new URLSearchParams(window.location.search);
+            return url.get(name);
+        }
+
+        var olValue = getParameterByName('ol');
+        if (olValue) {
+            $('#uniqueInput').val(olValue);
+            find_info();
+        }
+    }
+
+    $(document).ready(function () {
+        prepopolaInputDaURL();
+    });
 </script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

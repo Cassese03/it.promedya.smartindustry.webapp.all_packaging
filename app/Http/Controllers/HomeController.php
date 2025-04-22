@@ -73,7 +73,7 @@ class HomeController extends Controller
 
         if (isset($dati['reparto'])) {
             $risorse = DB::select('
-                SELECT * from PRRisorsa Where Cd_PRReparto = \'' . $dati['reparto'] . '\'
+                SELECT * from PRRisorsa Where Esterno = 0 and Cd_PRReparto = \'' . $dati['reparto'] . '\'
             ');
         }
 
@@ -1219,7 +1219,7 @@ class HomeController extends Controller
                 if (isset($dati['Rif_Nr_Collo']))
                     if ($dati['Rif_Nr_Collo'] != '') {
                         if (substr($dati['Rif_Nr_Collo'], 0, 2) == '01') {
-                            $decoder = new Decoder($delimiter = '');
+                            /*$decoder = new Decoder($delimiter = '');
                             try {
                                 $valore = $decoder->decode($dati['Rif_Nr_Collo']);
                                 $dati['Rif_Nr_Collo'] = $valore->toArray()['value'];
@@ -1233,12 +1233,14 @@ class HomeController extends Controller
                                 }
                             } catch (\Exception $e) {
 
-                            }
+                            }*/
+
+                            $dati['Rif_Nr_Collo'] = substr($dati['Rif_Nr_Collo'], -5);
                         }
                     }
                 if (isset($dati['Rif_Nr_Collo2']))
                     if ($dati['Rif_Nr_Collo2'] != '') {
-                        if (substr($dati['Rif_Nr_Collo2'], 0, 2) == '01') {
+                        if (substr($dati['Rif_Nr_Collo2'], 0, 2) == '01') {/*
                             $decoder2 = new Decoder($delimiter = '');
                             try {
                                 $valore2 = $decoder2->decode($dati['Rif_Nr_Collo2']);
@@ -1254,7 +1256,9 @@ class HomeController extends Controller
                                 }
                             } catch (\Exception $e) {
 
-                            }
+                            }*/
+                            $dati['Rif_Nr_Collo2'] = substr($dati['Rif_Nr_Collo2'], -5);
+
                         }
                     }
 
@@ -1962,12 +1966,12 @@ class HomeController extends Controller
                 if (isset($dati['Rif_Nr_Collo_Ultimo']))
                     if ($dati['Rif_Nr_Collo_Ultimo'] != '') {
 
-                        if (substr($dati['Rif_Nr_Collo_Ultimo'], 0, 2) == '01') {
-                            $decoder = new Decoder($delimiter = '');
+                        if (substr($dati['Rif_Nr_Collo_Ultimo'], 0, 2) == '01') {/*
+                            $decoder3 = new Decoder($delimiter = '');
                             try {
-                                $valore = $decoder->decode($dati['Rif_Nr_Collo_Ultimo']);
-                                $dati['Rif_Nr_Collo_Ultimo'] = $valore->toArray()['value'];
-                                foreach ($valore->toArray()['identifiers'] as $field) {
+                                $valore3 = $decoder3->decode($dati['Rif_Nr_Collo_Ultimo']);
+                                $dati['Rif_Nr_Collo_Ultimo'] = $valore3->toArray()['value'];
+                                foreach ($valore3->toArray()['identifiers'] as $field) {
 
                                     if ($field['code'] == '10') {
 
@@ -1977,18 +1981,20 @@ class HomeController extends Controller
                                 }
                             } catch (\Exception $e) {
 
-                            }
+                            }*/
+                            $dati['Rif_Nr_Collo_Ultimo'] = substr($dati['Rif_Nr_Collo_Ultimo'], -5);
+
                         }
                     }
                 if (isset($dati['Rif_Nr_Collo2_Ultimo']))
                     if ($dati['Rif_Nr_Collo2_Ultimo'] != '') {
 
-                        if (substr($dati['Rif_Nr_Collo2_Ultimo'], 0, 2) == '01') {
-                            $decoder2 = new Decoder($delimiter = '');
+                        if (substr($dati['Rif_Nr_Collo2_Ultimo'], 0, 2) == '01') {/*
+                            $decoder4 = new Decoder($delimiter = '');
                             try {
-                                $valore2 = $decoder2->decode($dati['Rif_Nr_Collo2_Ultimo']);
-                                $dati['Rif_Nr_Collo2_Ultimo'] = $valore2->toArray()['value'];
-                                foreach ($valore2->toArray()['identifiers'] as $field) {
+                                $valore4 = $decoder4->decode($dati['Rif_Nr_Collo2_Ultimo']);
+                                $dati['Rif_Nr_Collo2_Ultimo'] = $valore4->toArray()['value'];
+                                foreach ($valore4->toArray()['identifiers'] as $field) {
 
                                     if ($field['code'] == '10') {
 
@@ -1998,7 +2004,9 @@ class HomeController extends Controller
                                 }
                             } catch (\Exception $e) {
 
-                            }
+                            }*/
+                            $dati['Rif_Nr_Collo2_Ultimo'] = substr($dati['Rif_Nr_Collo2_Ultimo'], -5);
+
                         }
                     }
                 $attivita_bolle = DB::select('SELECT * from PrBLAttivitaEx Where Id_PrBLAttivita = ' . $id);
@@ -2165,13 +2173,13 @@ class HomeController extends Controller
             if (isset($dati['stop_no_stampa'])) {
                 if (isset($dati['Rif_Nr_Collo_Ultimo']))
                     if ($dati['Rif_Nr_Collo_Ultimo'] != '') {
-                        if (substr($dati['Rif_Nr_Collo_Ultimo'], 0, 2) == '01') {
+                        if (substr($dati['Rif_Nr_Collo_Ultimo'], 0, 2) == '01') {/*
 
-                            $decoder = new Decoder($delimiter = '');
+                            $decoder5 = new Decoder($delimiter = '');
                             try {
-                                $valore = $decoder->decode($dati['Rif_Nr_Collo_Ultimo']);
-                                $dati['Rif_Nr_Collo_Ultimo'] = $valore->toArray()['value'];
-                                foreach ($valore->toArray()['identifiers'] as $field) {
+                                $valore5 = $decoder5->decode($dati['Rif_Nr_Collo_Ultimo']);
+                                $dati['Rif_Nr_Collo_Ultimo'] = $valore5->toArray()['value'];
+                                foreach ($valore5->toArray()['identifiers'] as $field) {
 
                                     if ($field['code'] == '10') {
 
@@ -2181,17 +2189,19 @@ class HomeController extends Controller
                                 }
                             } catch (\Exception $e) {
 
-                            }
+                            }*/
+                            $dati['Rif_Nr_Collo_Ultimo'] = substr($dati['Rif_Nr_Collo_Ultimo'], -5);
+
                         }
                     }
                 if (isset($dati['Rif_Nr_Collo2_Ultimo']))
                     if ($dati['Rif_Nr_Collo2_Ultimo'] != '') {
-                        if (substr($dati['Rif_Nr_Collo2_Ultimo'], 0, 2) == '01') {
-                            $decoder2 = new Decoder($delimiter = '');
+                        if (substr($dati['Rif_Nr_Collo2_Ultimo'], 0, 2) == '01') {/*
+                            $decoder6 = new Decoder($delimiter = '');
                             try {
-                                $valore2 = $decoder2->decode($dati['Rif_Nr_Collo2_Ultimo']);
-                                $dati['Rif_Nr_Collo2_Ultimo'] = $valore2->toArray()['value'];
-                                foreach ($valore2->toArray()['identifiers'] as $field) {
+                                $valore6 = $decoder6->decode($dati['Rif_Nr_Collo2_Ultimo']);
+                                $dati['Rif_Nr_Collo2_Ultimo'] = $valore6->toArray()['value'];
+                                foreach ($valore6->toArray()['identifiers'] as $field) {
 
                                     if ($field['code'] == '10') {
 
@@ -2201,7 +2211,9 @@ class HomeController extends Controller
                                 }
                             } catch (\Exception $e) {
 
-                            }
+                            }*/
+                            $dati['Rif_Nr_Collo_Ultimo'] = substr($dati['Rif_Nr_Collo_Ultimo'], -5);
+
                         }
                     }
 
@@ -2928,6 +2940,37 @@ class HomeController extends Controller
 
             }
 
+            if (isset($dati['modifica_materiale'])) {
+                unset($dati['modifica_materiale']);
+
+
+                $attivita_bolle = DB::select('SELECT * from PrBLAttivitaEx Where Id_PrBLAttivita = ' . $id);
+
+
+                if (sizeof($attivita_bolle) > 0) {
+                    $attivita_bolla = $attivita_bolle[0];
+
+                    $insert['Tipo'] = $dati['Tipo'];
+                    $insert['Consumo'] = $dati['Quantita'];
+                    $insert['Cd_ARMisura'] = $dati['Cd_ARMisura'];
+                    $umfatt = DB::select('SELECT UMFatt from ARARMisura Where Cd_AR = \'' . $dati['Cd_AR'] . '\' and Cd_ARMisura = \'' . $dati['Cd_ARMisura'] . '\'');
+                    if (sizeof($umfatt) > 0) {
+                        $umfatt = $umfatt[0]->UMFatt;
+                    } else $umfatt = 1;
+                    $insert['FattoreToUM1'] = $umfatt;
+                    $insert['Cd_AR'] = $dati['Cd_AR'];
+                    $insert['Cd_ARLotto'] = $dati['Cd_ARLotto'];
+                    $insert['Cd_MG'] = $dati['Cd_MG'];
+                    $insert['Cd_MGUbicazione'] = $dati['Cd_MGUbicazione'];
+
+
+                    DB::table('PRBLMateriale')->where('Id_PrBLMateriale', $dati['Id_PrBLMateriale'])->update($insert);
+                    return Redirect::to('dettaglio_bolla/' . $id);
+
+                }
+
+            }
+
             $risorse = DB::select('SELECT * from PRRisorsa Where Cd_PrRisorsa = \'' . $utente->Cd_PRRisorsa . '\'');
             $utente = session('utente');
 
@@ -3018,7 +3061,7 @@ class HomeController extends Controller
 
 
                     $attivita_bolla->versamenti = DB::select('SELECT * from PrVRAttivitaEx Where Id_PrBLAttivita=' . $id);
-                    $attivita_bolla->materiali = DB::select('SELECT * from PRBLMateriale Where Id_PrBLAttivita = ' . $id);
+                    $attivita_bolla->materiali = DB::select('SELECT PRBLMateriale.*,AR.Descrizione from PRBLMateriale left join AR ON AR.Cd_AR = PRBLMATERIALE.Cd_AR Where Id_PrBLAttivita = ' . $id);
                     $attivita_bolla->colli = DB::select('SELECT top 1 * from xWPCollo Where Id_PrBLAttivita =  ' . $attivita_bolla->Id_PrBLAttivita . ' order by Id_xWPCollo DESC');
                     $attivita_bolla->count_colli = DB::select('SELECT count(*) as num_colli from xWPCollo Where Id_PrBLAttivita =  ' . $attivita_bolla->Id_PrBLAttivita);
                     $attivita_bolla->pedane = DB::select('SELECT p.*,AR.PesoNetto as peso_pedana from xWPPD p LEFT JOIN AR ON AR.Cd_AR = p.Cd_xPD Where p.Id_PrOL = ' . $attivita_bolla->Id_PrOL . ' order by p.Id_xWPPD DESC');
