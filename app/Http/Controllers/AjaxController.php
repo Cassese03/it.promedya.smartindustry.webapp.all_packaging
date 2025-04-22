@@ -2274,7 +2274,7 @@ class AjaxController extends Controller
 
 
         $pedane = DB::select('
-            SELECT p.*,c.Descrizione as cliente,a.Cd_AR,PROL.Id_PrOL,a.Descrizione as Descrizione_Articolo,PRBLAttivita.NotePrBLAttivita,a.xPesobobina,a.xBase,a.PesoNetto as peso_pedana,PRBLAttivita.Id_PrBLAttivita,PRRLAttivita.Id_PrRLAttivita  from xWPPD  p
+            SELECT p.*,c.Descrizione as cliente,a.Cd_AR,PROL.Id_PrOL,a.Descrizione as Descrizione_Articolo,PRBLAttivita.NotePrBLAttivita,a.xPesobobina,a.xBase,a.PesoNetto as peso_pedana,a.Cd_AR,PRBLAttivita.Id_PrBLAttivita,PRRLAttivita.Id_PrRLAttivita  from xWPPD  p
             LEFT JOIN PROL ON PROL.Id_PrOL = p.Id_PrOL
             LEFT JOIN AR a ON a.Cd_AR = PROL.Cd_AR
             LEFT JOIN PROLDorig ON PROLDorig.Id_PrOL = PROL.Id_PrOL
@@ -2296,6 +2296,7 @@ class AjaxController extends Controller
 					)
 				)
             ) order by TimeIns DESC');
+            $p->conversione = DB::SELECT('SELECT * FROM ARARMisura where Cd_AR = \'' . $p->Cd_AR . '\' and Cd_ARMisura = \'pz\'');
             /*' . $p->Id_PrOL . '*/
             $pallet = DB::select('SELECT * from AR Where Cd_AR LIKE \'05%\'');
 
