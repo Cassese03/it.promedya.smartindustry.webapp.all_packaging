@@ -53,6 +53,7 @@ Route::any('ajax/check_bolla/{Id_PrBLAttivita}', 'AjaxController@check_bolla');
 Route::any('ajax/modifica_pedana_imballaggio/{Id_xWPPD}', 'AjaxController@modifica_pedana_imballaggio');
 Route::any('ajax/dettagli_versdamento/{Id_PrVRAttivita}', 'AjaxController@dettagli_versamento');
 Route::any('ajax/controlla_lotto/{lotto}', 'AjaxController@controlla_lotto');
+Route::any('ajax/controlla_lotto_mod/{lotto}/{Id_PrBLMateriale}', 'AjaxController@controlla_lotto_mod');
 Route::any('ajax/visualizza_file/{id_dms}', 'AjaxController@visualizza_file');
 Route::any('ajax/cambia_armisura/{Id_PrBLAttivita}/{cd_armisura}', 'AjaxController@cambia_armisura');
 Route::any('ajax/get_bolla/{numero_bolla}', 'AjaxController@get_bolla');
@@ -78,18 +79,19 @@ Route::any('stampa/qualita_materia/{Id_xFormQualita}', 'StampaController@qualita
 Route::any('ajax/qualita/find_info/{ol}', 'AjaxController@find_info');
 Route::any('ajax/qualita/find_info_id/{ol}', 'AjaxController@find_info_id');
 
+Route::any('/ajax/qualitamateria/{dcf}', 'AjaxController@find_info_em');
 
 
 Route::any('logout', 'HomeController@logout');
 
 
-Route::group(['prefix' => 'qualita'], function() {
+Route::group(['prefix' => 'qualita'], function () {
     Route::get('/', [QualitaController::class, 'view'])->name('qualita');
     Route::post('/', [QualitaController::class, 'onForm'])->name('sendQualita');
 
 });
 
-Route::group(['prefix' => 'qualita_materia'], function() {
+Route::group(['prefix' => 'qualita_materia'], function () {
     Route::get('/', [QualitaController::class, 'viewMateria'])->name('qualita_materia');
     Route::post('/', [QualitaController::class, 'onFormMateria'])->name('sendQualita_materia');
 
