@@ -856,7 +856,7 @@ class AjaxController extends Controller
                     </td>
                     <td>
                         <?php
-                        if($i->FornitoreEsterno != '') echo $i->FornitoreEsterno;
+                        if ($i->FornitoreEsterno != '') echo $i->FornitoreEsterno;
                         echo $i->Cd_Operatore;
                         if ($i->Assistente != '') echo ' / ' . $i->Assistente;
                         if (sizeof($note_prvr) > 0 && str_contains($i->Cd_PrRisorsa, 'ST')) echo ' / ' . $note_prvr[0]->Cd_Operatore; ?>
@@ -1085,7 +1085,7 @@ class AjaxController extends Controller
             $tot_KG = 0;
             $tot_KG_nc = 0;
 
-            $collo = DB::SELECT('SELECT xWPCollo.*,xCd_Operatore2 as Assistente FROM xWPCollo left join PRRLAttivita on PRRLAttivita.Id_PrVRAttivita = xWPCollo.Id_PrVRAttivita WHERE IdOrdineLavoro = \'' . $id_prol[0]->Id_PrOL . '\' and IdCodiceAttivita = \'' . $prol_attivita . '\' ');
+            $collo = DB::SELECT('SELECT xWPCollo.*,xCd_Operatore2 as Assistente FROM xWPCollo left join PRRLAttivita on PRRLAttivita.Id_PrVRAttivita = xWPCollo.Id_PrVRAttivita WHERE IdOrdineLavoro = \'' . $id_prol[0]->Id_PrOL . '\' and IdCodiceAttivita = \'' . $prol_attivita . '\' Order By TimeIns asc');
 
             $rif_madre = DB::SELECT('SELECT * FROM xWPCollo WHERE Nr_Collo in (SELECT Rif_Nr_Collo FROM xWPCollo WHERE IdOrdineLavoro = \'' . $id_prol[0]->Id_PrOL . '\' and IdCodiceAttivita = \'' . $prol_attivita . '\')');
 
@@ -2376,7 +2376,7 @@ class AjaxController extends Controller
 					)
 				)
             ) order by TimeIns DESC');
-            $p->conversione = DB::SELECT('SELECT TOP 1 * FROM ARARMisura where Cd_AR = \'' . $p->Cd_AR . '\' and (Cd_ARMisura = \'pz\' or Cd_ARMisura = \'cn\')');
+            $p->conversione = DB::SELECT('SELECT TOP 1 * FROM ARARMisura where Cd_AR = \'' . $p->Cd_AR . '\' and (Cd_ARMisura = \'pz\' or Cd_ARMisura = \'cn\') and TipoARMisura = \'V\'');
             /*' . $p->Id_PrOL . '*/
             $pallet = DB::select('SELECT * from AR Where Cd_AR LIKE \'05%\'');
 
