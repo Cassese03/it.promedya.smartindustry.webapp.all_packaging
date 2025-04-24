@@ -910,7 +910,7 @@ class HomeController extends Controller
                         $mail->Host = 'out.postassl.it';
                         $mail->SMTPAuth = true;
                         $mail->Username = 'produzione@allpackaging.it';
-                        $mail->Password = '3UtKQVz@!mz6';
+                        $mail->Password = '#4fxJ934Mk76';
                         $mail->SMTPSecure = 'ssl';
                         $mail->Port = 465;
                         $mail->setFrom('produzione@allpackaging.it', 'Produzione All Packaging');
