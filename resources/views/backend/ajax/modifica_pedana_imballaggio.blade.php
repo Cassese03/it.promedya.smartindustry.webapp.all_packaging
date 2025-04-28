@@ -38,7 +38,7 @@
                         <div class="col-md-3">
                             <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz"
-                                   <?php if ($p->Cd_ARMisura == 'kg') echo 'disabled'; ?><?php if ($p->Cd_ARMisura == 'kg') echo 'disabled'; ?> onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
+                                   <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
                         <div class="col-md-3">
@@ -279,7 +279,7 @@
                         <div class="col-md-3">
                             <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz"
-                                   <?php if ($p->Cd_ARMisura == 'kg') echo 'disabled'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
+                                   <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
                         <div class="col-md-3">
@@ -550,7 +550,7 @@
                         <div class="col-md-3">
                             <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz"
-                                   <?php if ($p->Cd_ARMisura == 'kg') echo 'disabled'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
+                                   <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
                         <div class="col-md-3">
@@ -791,7 +791,7 @@
                         <div class="col-md-3">
                             <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz"
-                                   <?php if ($p->Cd_ARMisura == 'kg') echo 'disabled'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
+                                   <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
                         <div class="col-md-3">
