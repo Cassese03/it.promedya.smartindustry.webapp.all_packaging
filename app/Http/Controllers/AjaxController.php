@@ -2377,7 +2377,9 @@ class AjaxController extends Controller
 				)
             ) order by TimeIns DESC');
             $p->conversione = DB::SELECT('SELECT TOP 1 * FROM ARARMisura where Cd_AR = \'' . $p->Cd_AR . '\' and (Cd_ARMisura = \'pz\' or Cd_ARMisura = \'cn\') and TipoARMisura = \'V\'');
-            /*' . $p->Id_PrOL . '*/
+            if(sizeof($p->conversione)== 0){
+                $p->conversione = DB::SELECT('SELECT TOP 1 * FROM ARARMisura where Cd_AR = \'' . $p->Cd_AR . '\' and Cd_ARMisura = \'kg\'');
+            }/*' . $p->Id_PrOL . '*/
             $pallet = DB::select('SELECT * from AR Where Cd_AR LIKE \'05%\'');
 
             return View::make('backend.ajax.modifica_pedana_imballaggio', compact('p', 'pallet'));
