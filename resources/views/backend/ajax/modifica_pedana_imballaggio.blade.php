@@ -18,7 +18,7 @@
                             <label>Peso Lordo</label>
                             <input type="text" id="pesolordo_<?php echo $p->Id_xWPPD ?>" name="PesoLordo"
                                    value="<?php echo ($p->PesoLordo > 0)?number_format($p->PesoLordo,2,'.',''):'' ?>"
-                                   class="form-control keyboard_num" onchange="calcola_pesi(<?php echo $p->Id_xWPPD ?>)"
+                                   class="form-control <?php if ($p->Cd_ARMisura == 'kg') echo 'keyboard_num'; ?>" onchange="calcola_pesi(<?php echo $p->Id_xWPPD ?>)"
                                    onkeyup="calcola_pesi(<?php echo $p->Id_xWPPD ?>)" <?php if ($p->Cd_ARMisura != 'kg') echo 'readonly'; ?>>
                         </div>
 
@@ -39,7 +39,7 @@
                             <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz"
                                    <?php if ($p->Cd_ARMisura == 'kg') echo 'disabled'; ?><?php if ($p->Cd_ARMisura == 'kg') echo 'disabled'; ?> onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
-                                   class="form-control keyboard_num ui-keyboard-input ui-widget-content ui-corner-all">
+                                   class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
                         <div class="col-md-3">
                             <label>Peso Bobina</label>
@@ -280,7 +280,7 @@
                             <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz"
                                    <?php if ($p->Cd_ARMisura == 'kg') echo 'disabled'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
-                                   class="form-control keyboard_num ui-keyboard-input ui-widget-content ui-corner-all">
+                                   class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
                         <div class="col-md-3">
                             <label>Peso Bobina</label>
@@ -530,7 +530,7 @@
                             <label>Peso Lordo</label>
                             <input type="text" id="pesolordo_<?php echo $p->Id_xWPPD ?>" name="PesoLordo"
                                    value="<?php echo ($p->PesoLordo > 0)?number_format($p->PesoLordo,2,'.',''):'' ?>"
-                                   class="form-control keyboard_num" onchange="calcola_pesi(<?php echo $p->Id_xWPPD ?>)"
+                                   class="form-control <?php if ($p->Cd_ARMisura == 'kg') echo 'keyboard_num'; ?>" onchange="calcola_pesi(<?php echo $p->Id_xWPPD ?>)"
                                    <?php if ($p->Cd_ARMisura != 'kg') echo 'readonly'; ?>      onkeyup="calcola_pesi(<?php echo $p->Id_xWPPD ?>)">
                         </div>
 
@@ -551,7 +551,7 @@
                             <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz"
                                    <?php if ($p->Cd_ARMisura == 'kg') echo 'disabled'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
-                                   class="form-control keyboard_num ui-keyboard-input ui-widget-content ui-corner-all">
+                                   class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
                         <div class="col-md-3">
                             <label>Peso Bobina</label>
@@ -792,7 +792,7 @@
                             <label>Quantita' a pezzi / cn</label>
                             <input type="text" id="qta_prodotta_pz"
                                    <?php if ($p->Cd_ARMisura == 'kg') echo 'disabled'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
-                                   class="form-control keyboard_num ui-keyboard-input ui-widget-content ui-corner-all">
+                                   class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
                         <div class="col-md-3">
                             <label>Peso Bobina</label>
