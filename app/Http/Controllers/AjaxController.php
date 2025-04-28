@@ -2354,7 +2354,7 @@ class AjaxController extends Controller
 
 
         $pedane = DB::select('
-            SELECT p.*,c.Descrizione as cliente,a.Cd_AR,PROL.Id_PrOL,a.Descrizione as Descrizione_Articolo,PRBLAttivita.NotePrBLAttivita,a.xPesobobina,a.xBase,a.PesoNetto as peso_pedana,PRBLAttivita.Id_PrBLAttivita,PRRLAttivita.Id_PrRLAttivita  from xWPPD  p
+            SELECT p.*,d.Cd_ARMisura,c.Descrizione as cliente,a.Cd_AR,PROL.Id_PrOL,a.Descrizione as Descrizione_Articolo,PRBLAttivita.NotePrBLAttivita,a.xPesobobina,a.xBase,a.PesoNetto as peso_pedana,PRBLAttivita.Id_PrBLAttivita,PRRLAttivita.Id_PrRLAttivita  from xWPPD  p
             LEFT JOIN PROL ON PROL.Id_PrOL = p.Id_PrOL
             LEFT JOIN AR a ON a.Cd_AR = PROL.Cd_AR
             LEFT JOIN PROLDorig ON PROLDorig.Id_PrOL = PROL.Id_PrOL
