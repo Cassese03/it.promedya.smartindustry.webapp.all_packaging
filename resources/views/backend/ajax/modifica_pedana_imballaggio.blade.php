@@ -59,7 +59,7 @@
                             <label>Peso Manuale</label>
                             <input type="text" id="pesomanuale_<?php echo $p->Id_xWPPD ?>" name="PesoManuale" <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>
                                    value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control"
-                                   readonly required>
+                                   required>
                         </div>
 
                         <?php
@@ -575,7 +575,7 @@
                             <label>Peso Manuale</label>
                             <input type="text" id="pesomanuale_<?php echo $p->Id_xWPPD ?>" name="PesoManuale" <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>
                                    value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control"
-                                   readonly required>
+                                   required>
                         </div>
 
                         <div class="col-md-2">
@@ -824,7 +824,7 @@
                             <label>Peso Manuale</label>
                             <input type="text" id="pesomanuale_<?php echo $p->Id_xWPPD ?>" name="PesoManuale" <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>
                                    value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control"
-                                   readonly required>
+                                   required>
                         </div>
 
                         <div class="col-md-2">
