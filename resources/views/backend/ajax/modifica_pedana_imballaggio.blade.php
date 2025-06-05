@@ -41,7 +41,7 @@
                                    <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label>Peso Bobina</label>
                             <input type="text" id="pesobobina_<?php echo $p->Id_xWPPD ?>"
                                    value="<?php echo number_format($p->xPesobobina,2,'.','') ?>" class="form-control"
@@ -55,12 +55,19 @@
                                    readonly required>
                         </div>
 
-                            <?php
+                        <div class="col-md-2">
+                            <label>Peso Manuale</label>
+                            <input type="text" id="pesomanuale_<?php echo $p->Id_xWPPD ?>" name="PesoManuale"
+                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control"
+                                   readonly required>
+                        </div>
+
+                        <?php
                             $peso_mt = 0;
                             if (sizeof($p->mandrini) > 0) $peso_mt = $p->mandrini[0]->xPesoalmt * ($p->xBase / 1000);
                             ?>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label>Peso Anima</label>
                             <input id="pesoanima_<?php echo $p->Id_xWPPD ?>" type="number" step="1" value="0"
                                    class="form-control" readonly>
@@ -282,7 +289,16 @@
                                    <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
-                        <div class="col-md-3">
+
+
+                        <div class="col-md-2">
+                            <label>Peso Manuale</label>
+                            <input type="text" id="pesomanuale_<?php echo $p->Id_xWPPD ?>" name="PesoManuale"
+                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control"
+                                   readonly required>
+                        </div>
+
+                        <div class="col-md-2">
                             <label>Peso Bobina</label>
                             <input type="text" id="pesobobina_<?php echo $p->Id_xWPPD ?>"
                                    value="<?php echo number_format($p->xPesobobina,2,'.','') ?>" class="form-control"
@@ -301,7 +317,7 @@
                             if (sizeof($p->mandrini) > 0) $peso_mt = $p->mandrini[0]->xPesoalmt * ($p->xBase / 1000);
                             ?>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label>Peso Anima</label>
                             <input id="pesoanima_<?php echo $p->Id_xWPPD ?>" type="number" step="1"
                                    value="<?php echo number_format($peso_mt,4,'.','') ?>" class="form-control" readonly>
@@ -553,7 +569,16 @@
                                    <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
-                        <div class="col-md-3">
+
+
+                        <div class="col-md-2">
+                            <label>Peso Manuale</label>
+                            <input type="text" id="pesomanuale_<?php echo $p->Id_xWPPD ?>" name="PesoManuale"
+                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control"
+                                   readonly required>
+                        </div>
+
+                        <div class="col-md-2">
                             <label>Peso Bobina</label>
                             <input type="text" id="pesobobina_<?php echo $p->Id_xWPPD ?>"
                                    value="<?php echo number_format($p->xPesobobina,2,'.','') ?>" class="form-control"
@@ -572,7 +597,7 @@
                             if (sizeof($p->mandrini) > 0) $peso_mt = $p->mandrini[0]->xPesoalmt * ($p->xBase / 1000);
                             ?>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label>Peso Anima</label>
                             <input id="pesoanima_<?php echo $p->Id_xWPPD ?>" type="number" step="1" value="0"
                                    class="form-control" readonly>
@@ -794,7 +819,15 @@
                                    <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>  onchange="change_QTAPZ(<?php echo $p->Id_xWPPD; ?>)"
                                    class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all">
                         </div>
-                        <div class="col-md-3">
+
+                        <div class="col-md-2">
+                            <label>Peso Manuale</label>
+                            <input type="text" id="pesomanuale_<?php echo $p->Id_xWPPD ?>" name="PesoManuale"
+                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control"
+                                   readonly required>
+                        </div>
+
+                        <div class="col-md-2">
                             <label>Peso Bobina</label>
                             <input type="text" id="pesobobina_<?php echo $p->Id_xWPPD ?>"
                                    value="<?php echo number_format($p->xPesobobina,2,'.','') ?>" class="form-control"
@@ -813,7 +846,7 @@
                             if (sizeof($p->mandrini) > 0) $peso_mt = $p->mandrini[0]->xPesoalmt * ($p->xBase / 1000);
                             ?>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label>Peso Anima</label>
                             <input id="pesoanima_<?php echo $p->Id_xWPPD ?>" type="number" step="1"
                                    value="<?php echo number_format($peso_mt,4,'.','') ?>" class="form-control" readonly>
