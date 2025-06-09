@@ -58,7 +58,7 @@
                         <div class="col-md-2">
                             <label>Peso Manuale</label>
                             <input type="text" id="pesomanuale_<?php echo $p->Id_xWPPD ?>" name="PesoManuale" <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>
-                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control"
+                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all"
                                    required>
                         </div>
 
@@ -294,7 +294,7 @@
                         <div class="col-md-2">
                             <label>Peso Manuale</label>
                             <input type="text" id="pesomanuale_<?php echo $p->Id_xWPPD ?>" name="PesoManuale" <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>
-                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control"
+                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all"
                                    required>
                         </div>
 
@@ -574,7 +574,7 @@
                         <div class="col-md-2">
                             <label>Peso Manuale</label>
                             <input type="text" id="pesomanuale_<?php echo $p->Id_xWPPD ?>" name="PesoManuale" <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>
-                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control"
+                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all"
                                    required>
                         </div>
 
@@ -823,7 +823,7 @@
                         <div class="col-md-2">
                             <label>Peso Manuale</label>
                             <input type="text" id="pesomanuale_<?php echo $p->Id_xWPPD ?>" name="PesoManuale" <?php if ($p->Cd_ARMisura == 'kg') echo 'readonly'; ?>
-                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control"
+                                   value="<?php echo number_format($p->PesoManuale,2,'.','') ?>" class="form-control <?php if ($p->Cd_ARMisura != 'kg') echo 'keyboard_num'; ?> ui-keyboard-input ui-widget-content ui-corner-all"
                                    required>
                         </div>
 
