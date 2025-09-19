@@ -2421,7 +2421,7 @@ class AjaxController extends Controller
 
         $etichette = DB::select('SELECT * from xSPReport where Id_xSPReport=' . $id);
         $clienti = DB::select('SELECT Cd_CF,Descrizione from CF where Cliente = 1');
-        $articoli = DB::select('SELECT * from AR');
+        $articoli = DB::select('SELECT * from AR where Cd_AR like \'02.%\' or Cd_AR like \'01.%\' or Cd_AR like \'16.%\' ');
         $fasi = DB::select('SELECT Cd_PrAttivita from PRAttivita');
 
         return View::make('backend.ajax.get_etichetta', compact('etichette', 'clienti', 'articoli', 'fasi'));
