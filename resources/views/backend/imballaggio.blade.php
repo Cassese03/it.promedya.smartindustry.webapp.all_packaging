@@ -203,13 +203,14 @@
     }
 
     function calcola_pesi(id){
+        $('#pesotara2_'+id).val(0);
         peso_lordo = $('#pesolordo_'+id).val()
         peso_bobina = $('#pesobobina_'+id).val()
         peso_anima = $('#pesoanima_'+id).val()
         numero_colli = $('#numerocolli_'+id).val()
         peso_pedana = $('#pesopedana_'+id).val()
         $('#pesonetto_'+id).val(parseFloat(parseFloat(peso_lordo) - parseFloat(peso_pedana)).toFixed(2));
-        $('#pesotara2_'+id).val(0);
+       // $('#pesotara2_'+id).val(0);
 //        $('#pesotara2_'+id).val(parseFloat(parseFloat(peso_anima) * parseFloat(numero_colli)).toFixed(2));
         $('#pesotara_'+id).val(parseFloat(parseFloat(peso_pedana)).toFixed(2));
         $('#pesonettissimo_'+id).val(parseFloat(parseFloat(peso_lordo) - parseFloat(peso_pedana) - (parseFloat(peso_anima) * parseFloat(numero_colli))).toFixed(2));
