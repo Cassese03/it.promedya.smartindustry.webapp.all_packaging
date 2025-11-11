@@ -473,8 +473,8 @@
             $('#pesolordo_' + id_xwppd).val(
                 (
                     parseFloat(parseInt(pezzi) * parseFloat(<?php echo $p->conversione[0]->UMFatt; ?>))
-                    /*+ parseFloat($('#pesotara2_' + id_xwppd).val())
-                    + parseFloat($('#pesotara_' + id_xwppd).val())*/
+                    + parseFloat($('#pesotara2_' + id_xwppd).val())
+                    + parseFloat($('#pesotara_' + id_xwppd).val())
                 ).toFixed(2)
             );
             $('#pesolordo_' + id_xwppd).trigger('onchange');
