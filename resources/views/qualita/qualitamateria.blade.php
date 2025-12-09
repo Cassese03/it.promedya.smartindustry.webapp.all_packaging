@@ -446,9 +446,9 @@
             document.getElementById('errore').innerHTML = 'Lotto [NON TROVATO]';
             document.getElementById('inserisci').innerHTML = '';
 
-            for (let i = 1; i <= 28; i++) {
+            for (let i = 1; i <= 27; i++) {
                 var campo = 'campo' + i;
-                eval("document.getElementById('" + campo + "').value = '';");
+                document.getElementById(campo).value = '';
             }
             
             document.getElementById('Note').value = '';
