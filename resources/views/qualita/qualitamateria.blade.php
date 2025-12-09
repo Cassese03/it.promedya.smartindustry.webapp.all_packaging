@@ -417,6 +417,14 @@
         if (!dcf.trim()) {
             document.getElementById('errore').innerHTML = 'Lotto';
             document.getElementById('inserisci').innerHTML = 'Inserisci lotto';
+            
+            // Pulisci tutti i campi quando il lotto viene rimosso
+            for (let i = 1; i <= 27; i++) {
+                var campo = 'campo' + i;
+                document.getElementById(campo).value = '';
+            }
+            document.getElementById('Note').value = '';
+            
             return;
         }
         $.ajax({
