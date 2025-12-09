@@ -291,6 +291,21 @@
                                                 </tr>
                                         </table>
 
+                                        <div class="col-sm-12">
+                                            <h4 style="color:black">Note</h4>
+                                        </div>
+                                        <div class="container mt-5" style="margin-top: 0!important">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <textarea class="form-control" name="Note" id="Note" rows="4" placeholder="Inserisci note..."></textarea>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
                                         <input name="cd_operatore" type="hidden" value="{{ $utente->Cd_Operatore }}"
                                             class="form-control">
                                         <button type="submit" value="salva" name="salva" class="btn btn-primary btn-lg"
@@ -427,6 +442,8 @@
                 var campo = 'campo' + i;
                 eval("document.getElementById('" + campo + "').value = '';");
             }
+            
+            document.getElementById('Note').value = '';
 
         });
     }

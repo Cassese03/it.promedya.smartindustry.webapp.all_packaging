@@ -2451,6 +2451,9 @@ class AjaxController extends Controller
                 for ($i = 1; $i <= 28; $i++) {
                     echo "$('#campo$i').val('" . str_replace('\'', '', $check->{'campo' . $i}) . "');";
                 }
+                if (isset($check->Note)) {
+                    echo "$('#Note').val('" . str_replace('\'', '', $check->Note) . "');";
+                }
             } else {
 
                 $fornitore = DB::select('SELECT CF.Descrizione FROM DOTes INNER JOIN CF on DOTes.Cd_CF = CF.Cd_CF WHERE Cd_Do = \'DCF\' AND Id_DoTes = ' . $idDotes);
