@@ -529,8 +529,7 @@
                                                             value="cambia_misura_colli" class="btn btn-success btn-sm"
                                                             onclick="$('#modal_cambia_misura_colli').modal('show')"
                                                             style="float:right;margin:10px;">Cambia Misura Colli
-                                                    </button><
-
+                                                    </button>
                                                     <button type="button" name="cambia_qta_colli"
                                                             value="cambia_qta_colli" class="btn btn-success btn-sm"
                                                             onclick="$('#modal_cambia_qta_colli').modal('show')"
@@ -1194,6 +1193,38 @@
             <div class="modal-footer">
                 <div class="modal-footer">
                     <button type="submit" data-dismiss="modal" class="btn btn-primary" onclick="cambia_misura_colli()">
+                        Salva
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<div class="modal fade" id="modal_cambia_qta_colli">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Definisci Quantita x Colli</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="number" min="0.01" step="0.01" style="width: 100%" id="qta_collo" class="form-control">
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+
+
+            <div class="modal-footer">
+                <div class="modal-footer">
+                    <button type="submit" data-dismiss="modal" class="btn btn-primary" onclick="cambia_qta_colli()">
                         Salva
                     </button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
@@ -2687,6 +2718,19 @@
         cd_armisura = document.getElementById('cd_armisura_collo').value;
         $.ajax({
             url: "<?php echo URL::asset('ajax/cambia_armisura') ?>/<?php echo $attivita_bolla->Id_PrBLAttivita ?>/" + cd_armisura,
+        }).done(function (result) {
+            if (result == '')
+                location.reload();
+            else {
+                alert('Errore! Qualcosa è andato Storto!');
+                location.reload();
+            }
+        });
+    }
+    function cambia_qta_colli() {
+        qta_colli = document.getElementById('qta_collo').value;
+        $.ajax({
+            url: "<?php echo URL::asset('ajax/cambia_qta') ?>/<?php echo $attivita_bolla->Id_PrBLAttivita ?>/" + qta_colli,
         }).done(function (result) {
             if (result == '')
                 location.reload();

@@ -56,6 +56,7 @@ Route::any('ajax/controlla_lotto/{lotto}', 'AjaxController@controlla_lotto');
 Route::any('ajax/controlla_lotto_mod/{lotto}/{Id_PrBLMateriale}', 'AjaxController@controlla_lotto_mod');
 Route::any('ajax/visualizza_file/{id_dms}', 'AjaxController@visualizza_file');
 Route::any('ajax/cambia_armisura/{Id_PrBLAttivita}/{cd_armisura}', 'AjaxController@cambia_armisura');
+Route::any('ajax/cambia_qta/{Id_PrBLAttivita}/{qta}', 'AjaxController@cambia_qta');
 Route::any('ajax/get_bolla/{numero_bolla}', 'AjaxController@get_bolla');
 Route::any('ajax/set_stampato/{nome_file}', 'AjaxController@set_stampato');
 Route::any('ajax/load_pedana/{Id_xWPPD}', 'AjaxController@load_pedana');
