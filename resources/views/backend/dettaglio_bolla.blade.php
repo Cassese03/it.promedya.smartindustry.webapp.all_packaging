@@ -529,6 +529,12 @@
                                                             value="cambia_misura_colli" class="btn btn-success btn-sm"
                                                             onclick="$('#modal_cambia_misura_colli').modal('show')"
                                                             style="float:right;margin:10px;">Cambia Misura Colli
+                                                    </button><
+
+                                                    <button type="button" name="cambia_qta_colli"
+                                                            value="cambia_qta_colli" class="btn btn-success btn-sm"
+                                                            onclick="$('#modal_cambia_qta_colli').modal('show')"
+                                                            style="float:right;margin:10px;">Cambia Quantità Colli
                                                     </button>
 
                                                     <?php if (sizeof($stampe_libere) > 0){ ?>

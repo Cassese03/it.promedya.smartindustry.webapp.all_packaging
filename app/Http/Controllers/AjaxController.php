@@ -363,6 +363,14 @@ class AjaxController extends Controller
         }
     }
 
+    public function cambia_qta($Id_PrBLAttivita, $qta)
+    {
+        $colli = DB::select('SELECT * from xWPCollo where Id_PrBLAttivita = ' . $Id_PrBLAttivita);
+        if (sizeof($colli) > 0) {
+            DB::UPDATE('UPDATE xWPCollo set QtaProdotta = \'' . $qta . '\' where Id_PrBLAttivita = \'' . $Id_PrBLAttivita . '\'');
+        }
+    }
+
     public function check_bolla($id_PrBlAttivita)
     {
         $bolla = DB::select('SELECT QuantitaDaProdurre + QuantitaProdotta as Quantita,Cd_ARMisura from PrBLAttivitaEx Where Id_PrBLAttivita = ' . $id_PrBlAttivita);
